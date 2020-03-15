@@ -1,26 +1,69 @@
 import 'package:flutter/material.dart';
 
-class Pet extends StatefulWidget {
-  final Image petImage;
+import '../models/available_pets.dart';
 
-  Pet(this.petImage);
-
-  @override
-  _PetState createState() => _PetState();
-}
-
-class _PetState extends State<Pet> {
+class Pet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(
-          width: 100,
-          height: 100,
-          color: Colors.blue,
-        ),
-        Text('Scrappy Doo, 4 years'),
-      ],
+    return Container(
+      width: double.infinity,
+      height: 350.0,
+      child: ListView(children: <Widget>[
+        GridView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: petList.length,
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          itemBuilder: (BuildContext context, int index) {
+            return GestureDetector(
+              child: Center(
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 25.0),
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        child: Container(
+                          width: 180.0,
+                          child: Card(
+                            elevation: 5.0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(petList[index].imageUrl),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          child: Container(
+                            width: 180.0,
+                            height: 30.0,
+                            color: Colors.white,
+                            child: Center(
+                              child: Text(
+                                petList[index].description,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              onTap: () {},
+            );
+          },
+        )
+      ]),
     );
   }
 }

@@ -1,34 +1,34 @@
-class AvailablePets {
+class AvailablePet {
   String imageUrl;
-  String name;
+  String description;
   String type;
 
-  AvailablePets({
+  AvailablePet({
     this.imageUrl,
-    this.name,
+    this.description,
     this.type,
   });
 }
 
-List<AvailablePets> availablePets = [
-  AvailablePets(
+List<AvailablePet> petList = [
+  AvailablePet(
     imageUrl: 'assets/images/scrappydoo.jpg',
-    name: 'Scrappy Doo',
+    description: 'Scrappy Doo, 4 years old',
     type: 'Dog'
   ),
-  AvailablePets(
+  AvailablePet(
     imageUrl: 'assets/images/master.jpg',
-    name: 'Master',
+    description: 'Master, 2 years old',
     type: 'Dog'
   ),
-  AvailablePets(
+  AvailablePet(
     imageUrl: 'assets/images/tyson.jpg',
-    name: 'Tyson',
+    description: 'Tyson, 1 year old',
     type: 'Dog'
   ),
-  AvailablePets(
+  AvailablePet(
     imageUrl: 'assets/images/nicky.jpg',
-    name: 'Nicky',
+    description: 'Nicky, 3 years old',
     type: 'Dog'
   ),
 ];

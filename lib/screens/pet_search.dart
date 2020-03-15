@@ -16,7 +16,8 @@ class PetSearch extends StatelessWidget {
           ),
           UserInfo(),
           PetOptions(),
-          Center(child: SearchBar(),)
+          Center(child: SearchBar(),),
+          Expanded(child: Pet()),
         ],
       ),
     );
