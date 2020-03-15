@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import './pet_options.dart';
-import './user_info.dart';
-import './search_bar.dart';
+import '../widgets/pet_options.dart';
+import '../widgets/user_info.dart';
+import '../widgets/search_bar.dart';
+import '../widgets/pet.dart';
 
 class PetSearch extends StatelessWidget {
   @override
@@ -16,7 +17,6 @@ class PetSearch extends StatelessWidget {
           UserInfo(),
           PetOptions(),
           Center(child: SearchBar(),)
-          
         ],
       ),
     );

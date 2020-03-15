@@ -8,7 +8,12 @@ class UserInfo extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          Icon(Icons.menu),
+          IconButton(
+            icon: Icon(Icons.arrow_back),
+            iconSize: 30.0,
+            color: Colors.black,
+            onPressed: () => Navigator.pop(context), 
+          ),
           Container(
             child: Column(
               children: <Widget>[

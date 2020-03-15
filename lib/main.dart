@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './pet_search.dart';
+import './screens/pet_search.dart';
 
 void main() => runApp(MyApp());
 

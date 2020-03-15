@@ -10,7 +10,7 @@ class SearchBar extends StatelessWidget {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           prefixIcon: Icon(Icons.search),
-          hintText: "Enter Your Name",
+          hintText: "Search pet for adoption",
           border: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.blueAccent, width: 32.0),
               borderRadius: BorderRadius.circular(25.0)),
