@@ -4,7 +4,7 @@ class UserInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 20, bottom: 30),
+      padding: EdgeInsets.only(top: 40, bottom: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
@@ -12,7 +12,7 @@ class UserInfo extends StatelessWidget {
             icon: Icon(Icons.arrow_back),
             iconSize: 30.0,
             color: Colors.black,
-            onPressed: () => Navigator.pop(context), 
+            onPressed: () => Navigator.pop(context),
           ),
           Container(
             child: Column(
