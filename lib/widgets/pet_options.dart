@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PetOptions extends StatelessWidget {
-  final List<String> options = [
+  final List<String> _options = [
     'All',
     'Dogs',
     'Cats',
@@ -22,13 +22,11 @@ class PetOptions extends StatelessWidget {
           height: 120,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: options.length,
+            itemCount: _options.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
                 onTap: () {
-                  setState(() {
-                    _selectedIndex = index;
-                  });
+                  _selectedIndex = index;
                 },
                 child: Container(
                   width: 100,
@@ -43,13 +41,13 @@ class PetOptions extends StatelessWidget {
                         width: 75.0,
                         decoration: BoxDecoration(
                           color: _selectedIndex == index
-                              ? Theme.of(context).accentColor
+                              ? Colors.yellow[600]
                               : Color(0xFFE7EBEE),
                           borderRadius: BorderRadius.circular(15.0),
                         ),
                         child: Center(
                           child: Text(
-                            options[index],
+                            _options[index],
                             style: TextStyle(
                               fontSize: 15,
                             ),
@@ -57,7 +55,7 @@ class PetOptions extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        options[index],
+                        _options[index],
                         style: TextStyle(
                           fontSize: 16,
                         ),
@@ -72,6 +70,4 @@ class PetOptions extends StatelessWidget {
       ],
     );
   }
-
-  void setState(Null Function() param0) {}
 }

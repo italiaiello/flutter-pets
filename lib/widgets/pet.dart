@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/available_pets.dart';
+import '../screens/pet_selected.dart';
 
 class Pet extends StatelessWidget {
   @override
@@ -8,6 +9,7 @@ class Pet extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 350.0,
+      padding: EdgeInsets.only(top: 5),
       child: ListView(children: <Widget>[
         GridView.builder(
           shrinkWrap: true,
@@ -59,7 +61,15 @@ class Pet extends StatelessWidget {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                print(index);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PetSelected(petList[index].imageUrl)
+                  ),
+                );
+              },
             );
           },
         )
